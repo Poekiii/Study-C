@@ -2,6 +2,6 @@
 
 int main()
 {
-    printf("%d", sizeof(char));
+    printf("%d", sizeof(long));
     return 0;
 }

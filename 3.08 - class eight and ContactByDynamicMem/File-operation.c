@@ -163,16 +163,3 @@
 //     fputc(ch, stdout); //从屏幕输出
 //     return 0;
 // }
-
-// 5.文件的随机读写
-#include <unistd.h>
-int main()  
-{
-    while(1)
-    {
-        fprintf(stdout,"hello-std-out");
-        fprintf(stderr,"hello-std-err");
-        sleep(1);
-    }
-    return 0;
-}
