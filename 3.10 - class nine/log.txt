@@ -1,0 +1,10 @@
+file:precomp2.c line:27 date:Mar 10 2021 time:11:58:08 i=0
+file:precomp2.c line:27 date:Mar 10 2021 time:11:58:08 i=1
+file:precomp2.c line:27 date:Mar 10 2021 time:11:58:08 i=2
+file:precomp2.c line:27 date:Mar 10 2021 time:11:58:08 i=3
+file:precomp2.c line:27 date:Mar 10 2021 time:11:58:08 i=4
+file:precomp2.c line:27 date:Mar 10 2021 time:11:58:08 i=5
+file:precomp2.c line:27 date:Mar 10 2021 time:11:58:08 i=6
+file:precomp2.c line:27 date:Mar 10 2021 time:11:58:08 i=7
+file:precomp2.c line:27 date:Mar 10 2021 time:11:58:08 i=8
+file:precomp2.c line:27 date:Mar 10 2021 time:11:58:08 i=9
