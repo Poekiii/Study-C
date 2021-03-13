@@ -58,14 +58,15 @@
 //     }
 //     if(CY)
 //     {
-//         memcpy(ret+1,digits,sizeof(digits));
+//         memcpy(ret+1,digits,digitsSize*sizeof(int));
 //         ret[0]= 1;
 //         *returnSize = digitsSize + 1;
 //         return ret;
 //     }
 //     else{
+//         memcpy(ret,digits,digitsSize*sizeof(int));
 //         *returnSize = digitsSize;
-//         return digits;
+//         return ret;
 //     }
 // }
 

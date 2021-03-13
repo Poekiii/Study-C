@@ -51,7 +51,6 @@ void CheckCapacity(struct Contact *ps)
         {
             ps->data = ptr;
             ps->capacity += Default_INC;
-            printf("增容成功~\n");
         }
         else
         {
