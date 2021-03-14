@@ -1,4 +1,4 @@
-#include "Seqlink.h"
+#include "SeqTab.h"
 
 //测试头尾插入删除
 void TestSL1()
