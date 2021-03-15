@@ -11,5 +11,6 @@ int main()
     LLPrint(pList);
     LLPopBack(&pList);
     LLPrint(pList);
+    LLDestroy(pList);
     return 0;
 }

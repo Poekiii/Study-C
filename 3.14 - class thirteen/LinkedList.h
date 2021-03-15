@@ -37,5 +37,6 @@ void LLPushFront(LLNode **pphead, LListDataType x);
 void LLPopFront(LLNode **pphead);
 //打印链表
 void LLPrint(LLNode *phead);
-
+//销毁链表
+void LLDestroy(LLNode *phead);
 #endif

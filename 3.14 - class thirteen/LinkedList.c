@@ -92,3 +92,14 @@ void LLPrint(LLNode *phead)
     }
     printf("NULL\n");
 }
+//销毁链表
+void LLDestroy(LLNode *phead)
+{
+    LLNode *cur = phead; //当前位置
+    while(cur != NULL) //当cur指向NULL时 说明已经遍历完成了 因为最后一个节点指向的下一个元素地址是NULL
+    {
+        LLNode *prev = cur->next;
+        free(cur);
+        cur = prev;
+    }
+}
