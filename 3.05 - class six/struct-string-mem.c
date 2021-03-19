@@ -177,26 +177,30 @@
 // #include <assert.h>
 // //strcpy返回目标串的地址，这个返回值的目的是可以使strcpy用在链式表达式中，增加灵活性
 // //例如len=strlen(strcpy(s2,s1+1)); 
-// char *my_strcpy(char *dest, char *src)
-// {
-//     char *ret = dest;
-//     assert(dest!=NULL);
-//     assert(src != NULL);
-//     while((*dest++ = *src++) != '\0') //先执行前面的赋值语句 后判断是否是到终点 所以最终是赋值了'\0'
-//     {
-//         ;
-//     }
-//     return ret;
-// }
+#include <stdio.h>
+#include <assert.h>
+char *my_strcpy(char *dest, char *src)
+{
+    char *ret = dest;
+    assert(dest!=NULL);
+    assert(src != NULL);
+    while( *src != '\0') //先执行前面的赋值语句 后判断是否是到终点 所以最终是赋值了'\0'
+    {
+        *dest = *src;
+        dest++;
+        src++;
+    }
+    return ret;
+}
 
-// int main()
-// {
-//     char a[10] = "hello";
-//     char b[20] = {0};
-//     my_strcpy(b, a);
-//     printf("%s\n", b);
-//     return 0;
-// }
+int main()
+{
+    char a[10] = "hello";
+    char b[20] = {0};
+    my_strcpy(b, a);
+    printf("%s\n", b);
+    return 0;
+}
 
 
 //char * strncpy ( char * destination, const char * source, size_t num );
@@ -523,41 +527,41 @@
 // case 2:当dest在src和src+num的中间的时候 后->前
 // case 3:当dest在src的后面时候 前->后 或者 后->前
 
-#include <assert.h>
-void *my_memmove(void *dest, const void *src, size_t num)
-{
-    void *ret = dest;
-    assert(dest != NULL && src != NULL);
-    if ((char *)src < (char *)dest ) //dest在后边 后->前 (指的是src)
-    {
-        while(num--)
-        {
-            *(char *)(dest + num) = *(char *)(src + num);
-        }
-    }
-    else //dest在前边 前->后 (指的是src)
-    {
-        while(num--)
-        {
-            *(char *)dest = *(char *)src;
-            (char *)dest++;
-            (char *)src++;//lvalue required as increment operand 表示不能对src进行++--
-        }
-    }
-    return ret;
-}
-int main()
-{
-    int arr1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    //my_memmove(arr1+2, arr1, 12);//从arr1+2 指的是第三个元素
-    //该代码指的是把1 2 3 复制到 原来 3 4 5 的区域 - 测试dest在后
-    my_memmove(arr1, arr1+2, 12);
-    //该代码指的是把3 4 5 复制到 原来 1 2 3 的区域 - 测试dest在前
-    for (int i = 0; i < 10; i++)
-    {
-        printf("%d ", arr1[i]);
-    }
-    //struct类型也可以
-    return 0;
-}
+// #include <assert.h>
+// void *my_memmove(void *dest, const void *src, size_t num)
+// {
+//     void *ret = dest;
+//     assert(dest != NULL && src != NULL);
+//     if ((char *)src < (char *)dest ) //dest在后边 后->前 (指的是src)
+//     {
+//         while(num--)
+//         {
+//             *(char *)(dest + num) = *(char *)(src + num);
+//         }
+//     }
+//     else //dest在前边 前->后 (指的是src)
+//     {
+//         while(num--)
+//         {
+//             *(char *)dest = *(char *)src;
+//             (char *)dest++;
+//             (char *)src++;//lvalue required as increment operand 表示不能对src进行++--
+//         }
+//     }
+//     return ret;
+// }
+// int main()
+// {
+//     int arr1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//     //my_memmove(arr1+2, arr1, 12);//从arr1+2 指的是第三个元素
+//     //该代码指的是把1 2 3 复制到 原来 3 4 5 的区域 - 测试dest在后
+//     my_memmove(arr1, arr1+2, 12);
+//     //该代码指的是把3 4 5 复制到 原来 1 2 3 的区域 - 测试dest在前
+//     for (int i = 0; i < 10; i++)
+//     {
+//         printf("%d ", arr1[i]);
+//     }
+//     //struct类型也可以
+//     return 0;
+// }
 
