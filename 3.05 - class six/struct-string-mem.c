@@ -177,30 +177,30 @@
 // #include <assert.h>
 // //strcpy返回目标串的地址，这个返回值的目的是可以使strcpy用在链式表达式中，增加灵活性
 // //例如len=strlen(strcpy(s2,s1+1)); 
-#include <stdio.h>
-#include <assert.h>
-char *my_strcpy(char *dest, char *src)
-{
-    char *ret = dest;
-    assert(dest!=NULL);
-    assert(src != NULL);
-    while( *src != '\0') //先执行前面的赋值语句 后判断是否是到终点 所以最终是赋值了'\0'
-    {
-        *dest = *src;
-        dest++;
-        src++;
-    }
-    return ret;
-}
+// #include <stdio.h>
+// #include <assert.h>
+// char *my_strcpy(char *dest, char *src)
+// {
+//     char *ret = dest;
+//     assert(dest!=NULL);
+//     assert(src != NULL);
+//     while( *src != '\0') //先执行前面的赋值语句 后判断是否是到终点 所以最终是赋值了'\0'
+//     {
+//         *dest = *src;
+//         dest++;
+//         src++;
+//     }
+//     return ret;
+// }
 
-int main()
-{
-    char a[10] = "hello";
-    char b[20] = {0};
-    my_strcpy(b, a);
-    printf("%s\n", b);
-    return 0;
-}
+// int main()
+// {
+//     char a[10] = "hello";
+//     char b[20] = {0};
+//     my_strcpy(b, a);
+//     printf("%s\n", b);
+//     return 0;
+// }
 
 
 //char * strncpy ( char * destination, const char * source, size_t num );
@@ -523,7 +523,7 @@ int main()
 // }
 
 // 2.memmove (内存操作 解决内存重叠问题)
-// case 1:当dest在src的前面时候 前->后拷贝
+// case 1:当dest在src的前面时候 前->后 拷贝
 // case 2:当dest在src和src+num的中间的时候 后->前
 // case 3:当dest在src的后面时候 前->后 或者 后->前
 
